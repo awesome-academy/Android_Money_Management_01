@@ -1,12 +1,12 @@
-package com.framgia.moneymanagement.screen.screen.screen.main;
+package com.framgia.moneymanagement.screen.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.framgia.moneymanagement.R;
-import com.framgia.moneymanagement.screen.screen.screen.register.RegisterActivity;
-import com.framgia.moneymanagement.screen.screen.screen.login.LoginActivity;
+import com.framgia.moneymanagement.screen.login.LoginActivity;
+import com.framgia.moneymanagement.screen.register.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_light_blue"
-    tools:context=".screen.screen.main.MainActivity">
+    tools:context=".screen.main.MainActivity">
 
     <ImageView
         android:id="@+id/image_logo"
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:gravity="center"
         android:id="@+id/text_title"
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <TextView
+        android:gravity="center"
         android:id="@+id/text_second_tittle"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_0"
