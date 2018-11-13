@@ -13,6 +13,7 @@
     <string name="login_first_title">Chúng tôi sẽ không đăng thông mà không</string>
     <string name="login_loading">loading...</string>
     <string name="msg_login_fail">Bạn kiểm tra lại tài khoản và mật khẩu</string>
+    <string name="msg_save_fail">Không thể lấy được thông tin của bạn</string>
     <string name="login_username_hint">Username</string>
     <string name="login_password_hint">Password</string>
     <string name="register_confirm_password_hint">Confirm Password</string>
