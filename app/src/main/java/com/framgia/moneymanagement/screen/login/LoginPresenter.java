@@ -77,22 +77,6 @@ public class LoginPresenter implements LoginContract.Presenter,
             mView.onLoginFail();
             return;
         }
-        mAuthenicationRepository.saveUser(getCurrentUser(),
-                new OnCompleteListener() {
-                    @Override
-                    public void onComplete(@NonNull Task task) {
-                        if (!task.isSuccessful()) {
-                            mView.onSaveUserFail();
-                            return;
-                        }
-                        mView.intentActivity();
-                    }
-                }, new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        mView.onSaveUserFail();
-                    }
-                });
         try {
             GoogleSignInAccount account = (GoogleSignInAccount) task.getResult(ApiException.class);
             if (account == null) {

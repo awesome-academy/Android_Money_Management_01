@@ -47,4 +47,11 @@ public class AuthenticationRepository implements AuthenticationDataSource.Remote
     public void loginWithFacebook(AccessToken token, DataCallback<FirebaseUser> callback) {
         mRemote.loginWithFacebook(token, callback);
     }
+
+    @Override
+    public void createAccount(String userName, String password,
+                             OnCompleteListener onCompleteListener,
+                             OnFailureListener onFailureListener) {
+        mRemote.createAccount(userName, password, onCompleteListener, onFailureListener);
+    }
 }

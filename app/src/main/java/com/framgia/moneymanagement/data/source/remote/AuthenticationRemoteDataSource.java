@@ -80,4 +80,12 @@ public class AuthenticationRemoteDataSource implements AuthenticationDataSource.
         });
     }
 
+    @Override
+    public void createAccount(String userName, String password,
+                              OnCompleteListener onCompleteListener,
+                              OnFailureListener onFailureListener) {
+        mAuth.createUserWithEmailAndPassword(userName, password).
+                addOnCompleteListener(onCompleteListener).
+                addOnFailureListener(onFailureListener);
+    }
 }

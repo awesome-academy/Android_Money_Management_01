@@ -22,4 +22,8 @@
     <string name="msg_register_errorpassword">Mật khẩu của bạn phải lớn hơn 6 ký tự</string>
     <string name="title_out">Thoát</string>
     <string name="navigation_notification">notification</string>
+    <string name="registration_empty_username">Bạn cần nhập đầy đủ thông tin</string>
+    <string name="registration_empty_password">Bạn cần nhập đầy đủ thông tin</string>
+    <string name="registration_empty_confirm_password">Bạn cần nhập đầy đủ thông tin</string>
+    <string name="registration_confirm_password_error">Mật khẩu không trùng với nhập mật khẩu lại</string>
 </resources>
