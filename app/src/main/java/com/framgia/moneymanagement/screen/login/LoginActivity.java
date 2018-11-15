@@ -20,7 +20,7 @@ import com.facebook.login.widget.LoginButton;
 import com.framgia.moneymanagement.R;
 import com.framgia.moneymanagement.data.repository.AuthenticationRepository;
 import com.framgia.moneymanagement.data.source.remote.AuthenticationRemoteDataSource;
-import com.framgia.moneymanagement.screen.NavigationDrawerActivity;
+import com.framgia.moneymanagement.screen.navigationdrawer.NavigationDrawerActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void intentActivity() {
+    public void startHome() {
         startActivity(new Intent(this, NavigationDrawerActivity.class));
     }
 

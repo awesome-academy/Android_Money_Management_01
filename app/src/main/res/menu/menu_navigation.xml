@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_statistics"
+        android:icon="@drawable/ic_menu_statistics"
+        android:title="@string/title_statistics" />
+    <item
+        android:id="@+id/menu_spending"
+        android:icon="@drawable/ic_menu_spending"
+        android:title="@string/title_spending" />
+    <item
+        android:id="@+id/menu_income"
+        android:icon="@drawable/ic_menu_income"
+        android:title="@string/title_income" />
+
+    <item android:title="@string/tilte_about">
+        <menu>
+            <item
+                android:id="@+id/menu_introduce"
+                android:icon="@drawable/ic_menu_introduction"
+                android:title="@string/title_introduce"/>
+            <item
+                android:id="@+id/menu_exit"
+                android:icon="@drawable/ic_menu_exit"
+                android:title="@string/title_out"/>
+        </menu>
+    </item>
+</menu>

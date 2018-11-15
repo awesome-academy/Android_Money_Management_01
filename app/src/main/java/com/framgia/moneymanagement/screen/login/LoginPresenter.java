@@ -3,15 +3,12 @@ package com.framgia.moneymanagement.screen.login;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.framgia.moneymanagement.data.DataCallback;
 import com.framgia.moneymanagement.data.model.User;
 import com.framgia.moneymanagement.data.repository.AuthenticationRepository;
 
-import com.framgia.moneymanagement.screen.NavigationDrawerActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
@@ -77,6 +74,7 @@ public class LoginPresenter implements LoginContract.Presenter,
             mView.onLoginFail();
             return;
         }
+        mView.startHome();
         try {
             GoogleSignInAccount account = (GoogleSignInAccount) task.getResult(ApiException.class);
             if (account == null) {
@@ -87,7 +85,7 @@ public class LoginPresenter implements LoginContract.Presenter,
                             mView.onSaveUserFail();
                             return;
                         }
-                        mView.intentActivity();
+                        mView.startHome();
                     }
                 }, new OnFailureListener() {
                     @Override
@@ -95,8 +93,6 @@ public class LoginPresenter implements LoginContract.Presenter,
                         mView.onSaveUserFail();
                     }
                 });
-            } else {
-                return;
             }
         } catch (Throwable throwable) {
             throwable.printStackTrace();
@@ -150,7 +146,7 @@ public class LoginPresenter implements LoginContract.Presenter,
                                     mView.onSaveUserFail();
                                     return;
                                 }
-                                mView.intentActivity();
+                                mView.startHome();
                             }
                         }, new OnFailureListener() {
                             @Override

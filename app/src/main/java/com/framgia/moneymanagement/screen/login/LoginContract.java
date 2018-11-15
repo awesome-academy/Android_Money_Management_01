@@ -24,7 +24,7 @@ public interface LoginContract {
 
         void hideProgressDiaglog();
 
-        void intentActivity();
+        void startHome();
 
         void loginWithFacebook(AccessToken token);
     }
