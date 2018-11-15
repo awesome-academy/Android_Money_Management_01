@@ -24,6 +24,10 @@ public interface AuthenticationDataSource {
                              OnFailureListener onFailureListener);
 
         void loginWithFacebook(AccessToken token, DataCallback<FirebaseUser> callback);
+
+        void createAccount(String userName, String password,
+                           OnCompleteListener onCompleteListener,
+                           OnFailureListener onFailureListener);
     }
 
     interface Local {
