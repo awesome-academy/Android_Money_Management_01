@@ -26,4 +26,9 @@
     <string name="registration_empty_password">Bạn cần nhập đầy đủ thông tin</string>
     <string name="registration_empty_confirm_password">Bạn cần nhập đầy đủ thông tin</string>
     <string name="registration_confirm_password_error">Mật khẩu không trùng với nhập mật khẩu lại</string>
+    <string name="title_statistics">Thống kê</string>
+    <string name="title_income">Khoản thu</string>
+    <string name="title_spending">Khoản chi</string>
+    <string name="title_introduce">Giới thiệu</string>
+    <string name="tilte_about">About</string>
 </resources>

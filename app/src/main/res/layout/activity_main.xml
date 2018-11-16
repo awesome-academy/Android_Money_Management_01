@@ -14,7 +14,7 @@
         android:layout_marginEnd="@dimen/dp_130"
         android:layout_marginRight="@dimen/dp_130"
         android:layout_marginTop="@dimen/dp_70"
-        android:src="@drawable/londat"
+        android:src="@drawable/ic_logo_pig"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
