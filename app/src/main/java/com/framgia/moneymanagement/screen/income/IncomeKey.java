@@ -8,4 +8,6 @@ public class IncomeKey {
     public static final String SELLING = "Bán đồ";
     public static final String DIFFERENT = "Khoản thu khác";
     public static final String DATE_FORMAT = "dd/MM/yyyy";
+    public static final String DECIMAL_FORMAT = "###,###,###";
+    public static final String MONEY_FORMAT = " Đ";
 }
