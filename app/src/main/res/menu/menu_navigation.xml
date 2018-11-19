@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_menu_income"
         android:title="@string/title_income" />
 
-    <item android:title="@string/tilte_about">
+    <item android:title="@string/title_about">
         <menu>
             <item
                 android:id="@+id/menu_introduce"

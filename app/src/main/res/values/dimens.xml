@@ -32,4 +32,5 @@
     <dimen name="sp_15">15sp</dimen>
     <dimen name="dp_75">75dp</dimen>
     <dimen name="sp_24">24sp</dimen>
+    <dimen name="dp_88">88dp</dimen>
 </resources>

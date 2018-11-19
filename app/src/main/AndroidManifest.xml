@@ -42,6 +42,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".screen.navigationdrawer.NavigationDrawerActivity" />
+        <activity android:name=".screen.income.IncomeAddActivity"/>
     </application>
 
 </manifest>
