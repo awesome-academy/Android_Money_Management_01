@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity implements
                 ViewGroup.LayoutParams.MATCH_PARENT);
         params.gravity = Gravity.CENTER;
         mTextViewTitile = view.findViewById(R.id.text_view_title_action_bar);
-        mTextViewTitile.setText(R.string.tilte_register);
+        mTextViewTitile.setText(R.string.title_register);
         getSupportActionBar().setCustomView(view, params);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

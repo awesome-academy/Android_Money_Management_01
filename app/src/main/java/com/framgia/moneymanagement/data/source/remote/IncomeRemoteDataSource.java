@@ -1,0 +1,32 @@
+package com.framgia.moneymanagement.data.source.remote;
+
+import com.framgia.moneymanagement.data.IncomeDataSource;
+import com.framgia.moneymanagement.data.model.Income;
+import com.framgia.moneymanagement.data.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+public class IncomeRemoteDataSource implements IncomeDataSource.Remote {
+    private FirebaseDatabase mFirebaseDatabase;
+
+    public IncomeRemoteDataSource(FirebaseDatabase firebaseDatabase) {
+        mFirebaseDatabase = firebaseDatabase;
+    }
+
+    @Override
+    public void createIncome(Income income,
+                             OnCompleteListener onCompleteListener,
+                             OnFailureListener onFailureListener) {
+        DatabaseReference reference = mFirebaseDatabase.getReference(User.Key.USER);
+        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).
+                child(Income.Key.INCOME).
+                child(income.getId()).
+                setValue(income).
+                addOnCompleteListener(onCompleteListener).
+                addOnFailureListener(onFailureListener);
+    }
+}
