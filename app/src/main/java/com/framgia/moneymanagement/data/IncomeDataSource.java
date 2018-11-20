@@ -10,5 +10,7 @@ public interface IncomeDataSource {
         void createIncome(Income income,
                           OnCompleteListener onCompleteListener,
                           OnFailureListener onFailureListener);
+
+        void getIncomes(ValueEventListener valueEventListener);
     }
 }

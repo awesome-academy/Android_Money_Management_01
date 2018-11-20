@@ -29,4 +29,12 @@ public class IncomeRemoteDataSource implements IncomeDataSource.Remote {
                 addOnCompleteListener(onCompleteListener).
                 addOnFailureListener(onFailureListener);
     }
+
+    @Override
+    public void getIncomes(ValueEventListener valueEventListener) {
+        mFirebaseDatabase.getReference(User.Key.USER)
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(Income.Key.INCOME)
+                .addValueEventListener(valueEventListener);
+    }
 }

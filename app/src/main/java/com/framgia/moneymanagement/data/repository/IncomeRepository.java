@@ -20,4 +20,9 @@ public class IncomeRepository implements IncomeDataSource.Remote {
                              OnFailureListener onFailureListener) {
         mRemote.createIncome(income, onCompleteListener, onFailureListener);
     }
+
+    @Override
+    public void getIncomes(ValueEventListener valueEventListener) {
+        mRemote.getIncomes(valueEventListener);
+    }
 }
