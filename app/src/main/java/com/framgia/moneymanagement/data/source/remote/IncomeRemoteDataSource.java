@@ -6,6 +6,7 @@ import com.framgia.moneymanagement.data.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -36,5 +37,18 @@ public class IncomeRemoteDataSource implements IncomeDataSource.Remote {
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .child(Income.Key.INCOME)
                 .addValueEventListener(valueEventListener);
+    }
+
+    @Override
+    public void deleteIncome(String id,
+                             OnCompleteListener onCompleteListener,
+                             OnFailureListener onFailureListener) {
+        mFirebaseDatabase.getReference(User.Key.USER)
+                .child(FirebaseAuth.getInstance().getUid())
+                .child(Income.Key.INCOME)
+                .child(id)
+                .removeValue()
+                .addOnCompleteListener(onCompleteListener)
+                .addOnFailureListener(onFailureListener);
     }
 }
