@@ -1,9 +1,11 @@
 package com.framgia.moneymanagement.screen.spending;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,7 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class SpendingFragment extends Fragment implements View.OnClickListener, SpendingContract.View {
+public class SpendingFragment extends Fragment implements View.OnClickListener,
+        SpendingContract.View, SpendingAdapter.OnItemLongClickListener {
     private SpendingContract.Presenter mPresenter;
     private SpendingAdapter mAdapter;
 
@@ -33,7 +36,7 @@ public class SpendingFragment extends Fragment implements View.OnClickListener, 
         getData();
         view.findViewById(R.id.button_spending_add).setOnClickListener(this);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview_spending);
-        mAdapter = new SpendingAdapter();
+        mAdapter = new SpendingAdapter(this);
         recyclerView.setAdapter(mAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
@@ -69,5 +72,29 @@ public class SpendingFragment extends Fragment implements View.OnClickListener, 
     @Override
     public void onGetSpendingFail(String msg) {
         Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDeleteSpendingFail(String msg) {
+        Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDeleteSpendingSuccses() {
+        Toast.makeText(getActivity(), R.string.msg_delele_succes, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onLongClick(final String id) {
+        new AlertDialog.Builder(getActivity())
+                .setMessage(R.string.title_delete)
+                .setPositiveButton(R.string.title_yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        mPresenter.deleteSpending(id);
+                    }
+                })
+                .setNegativeButton(R.string.title_no, null)
+                .show();
     }
 }
