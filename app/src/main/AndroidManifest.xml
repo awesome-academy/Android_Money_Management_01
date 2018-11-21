@@ -43,6 +43,7 @@
         </activity>
         <activity android:name=".screen.navigationdrawer.NavigationDrawerActivity" />
         <activity android:name=".screen.income.IncomeAddActivity" />
+        <activity android:name=".screen.spending.SpendingAddActivity" />
     </application>
 
 </manifest>
