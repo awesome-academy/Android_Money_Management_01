@@ -44,4 +44,6 @@
     <string name="msg_delele_succes">Bạn đã xóa thành công</string>
     <string name="title_yes">Yes</string>
     <string name="title_no">No</string>
+    <string name="statistics_this_month">Tháng này</string>
+    <string name="statistics_last_month">Tháng trước</string>
 </resources>
