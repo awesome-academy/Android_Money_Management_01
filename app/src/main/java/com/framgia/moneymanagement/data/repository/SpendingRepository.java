@@ -24,4 +24,9 @@ public class SpendingRepository implements SpendingDataSource.Remote {
     public void getSpendingKey(ValueEventListener valueEventListener) {
         mRemote.getSpendingKey(valueEventListener);
     }
+
+    @Override
+    public void getSpendings(ValueEventListener valueEventListener) {
+        mRemote.getSpendings(valueEventListener);
+    }
 }
