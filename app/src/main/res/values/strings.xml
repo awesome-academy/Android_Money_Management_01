@@ -40,4 +40,8 @@
     <string name="msg_income_amount">Yêu cầu bạn nhập đúng thông tin</string>
     <string name="msg_income_time">Yêu cầu bạn nhập đúng thông tin</string>
     <string name="msg_income_create_succces">Bạn đã thêm thông tin thành công</string>
+    <string name="title_delete">Bạn có muốn xóa không</string>
+    <string name="msg_delele_succes">Bạn đã xóa thành công</string>
+    <string name="title_yes">Yes</string>
+    <string name="title_no">No</string>
 </resources>

@@ -54,6 +54,7 @@ public class IncomeAddPresenter implements IncomeAddContract.Presenter, OnComple
         }
     }
 
+
     @Override
     public void onFailure(@NonNull Exception e) {
         mView.onCreateIncomeFail(e.getMessage());
