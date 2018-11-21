@@ -1,7 +1,6 @@
 package com.framgia.moneymanagement.screen.spending;
 
 import com.framgia.moneymanagement.data.model.Spending;
-
 import java.util.List;
 
 public interface SpendingAddContract {

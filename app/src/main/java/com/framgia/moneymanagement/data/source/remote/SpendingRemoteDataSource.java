@@ -34,4 +34,12 @@ public class SpendingRemoteDataSource implements SpendingDataSource.Remote {
         mFirebaseDatabase.getReference(Spending.Key.SPENDING_KEY)
                 .addValueEventListener(valueEventListener);
     }
+
+    @Override
+    public void getSpendings(ValueEventListener valueEventListener) {
+        mFirebaseDatabase.getReference(User.Key.USER)
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(Spending.Key.SPENDING)
+                .addValueEventListener(valueEventListener);
+    }
 }

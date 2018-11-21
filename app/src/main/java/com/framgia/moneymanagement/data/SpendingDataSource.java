@@ -11,5 +11,7 @@ public interface SpendingDataSource {
                             OnFailureListener onFailureListener);
 
         void getSpendingKey(ValueEventListener valueEventListener);
+
+        void getSpendings(ValueEventListener valueEventListener);
     }
 }
