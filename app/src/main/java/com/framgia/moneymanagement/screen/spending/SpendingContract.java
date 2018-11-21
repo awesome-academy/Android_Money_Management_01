@@ -9,9 +9,15 @@ public interface SpendingContract {
         void onGetSpendingSucces(List<Spending> list);
 
         void onGetSpendingFail(String msg);
+
+        void onDeleteSpendingFail(String msg);
+
+        void onDeleteSpendingSuccses();
     }
 
     interface Presenter {
         void getSpending();
+
+        void deleteSpending(String id);
     }
 }

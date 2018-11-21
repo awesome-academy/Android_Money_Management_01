@@ -42,4 +42,21 @@ public class SpendingPresenter implements SpendingContract.Presenter {
             }
         });
     }
+
+    @Override
+    public void deleteSpending(String id) {
+        mRepository.deleteSpending(id, new OnCompleteListener() {
+            @Override
+            public void onComplete(@NonNull Task task) {
+                if (task.isComplete()) {
+                    mView.onDeleteSpendingSuccses();
+                }
+            }
+        }, new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                mView.onDeleteSpendingFail(e.getMessage());
+            }
+        });
+    }
 }

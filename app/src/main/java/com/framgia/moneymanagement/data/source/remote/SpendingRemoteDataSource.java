@@ -42,4 +42,17 @@ public class SpendingRemoteDataSource implements SpendingDataSource.Remote {
                 .child(Spending.Key.SPENDING)
                 .addValueEventListener(valueEventListener);
     }
+
+    @Override
+    public void deleteSpending(String id,
+                               OnCompleteListener onCompleteListener,
+                               OnFailureListener onFailureListener) {
+        mFirebaseDatabase.getReference(User.Key.USER)
+                .child(FirebaseAuth.getInstance().getUid())
+                .child(Spending.Key.SPENDING)
+                .child(id)
+                .removeValue()
+                .addOnCompleteListener(onCompleteListener)
+                .addOnFailureListener(onFailureListener);
+    }
 }

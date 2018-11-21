@@ -19,8 +19,10 @@ import java.util.List;
 public class SpendingAdapter extends RecyclerView.Adapter<SpendingAdapter.ViewHolder> {
     private List<Spending> mSpendings;
     private LayoutInflater mLayoutInflater;
+    private OnItemLongClickListener mListener;
 
-    public SpendingAdapter() {
+    public SpendingAdapter(OnItemLongClickListener listener) {
+        mListener = listener;
         mSpendings = new ArrayList<>();
     }
 
@@ -32,7 +34,7 @@ public class SpendingAdapter extends RecyclerView.Adapter<SpendingAdapter.ViewHo
         }
         Context context = parent.getContext();
         View view = mLayoutInflater.inflate(R.layout.item_spending, parent, false);
-        return new ViewHolder(view, context);
+        return new ViewHolder(view, context, mListener);
     }
 
     public void addData(List<Spending> spendings) {
@@ -56,21 +58,24 @@ public class SpendingAdapter extends RecyclerView.Adapter<SpendingAdapter.ViewHo
         return mSpendings != null ? mSpendings.size() : 0;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
         private TextView mTextViewName, mTextViewDiscription;
         private TextView mTextViewMonthAndYear, mTextViewAmount;
         private Context mContext;
         private CardView mCardView;
         private Spending mSpending;
+        private OnItemLongClickListener mListener;
 
-        ViewHolder(View itemView, Context context) {
+        ViewHolder(View itemView, Context context, OnItemLongClickListener listener) {
             super(itemView);
             mContext = context;
+            mListener = listener;
             mCardView = itemView.findViewById(R.id.cardview_spending);
             mTextViewName = itemView.findViewById(R.id.text_spending_name);
             mTextViewDiscription = itemView.findViewById(R.id.text_spending_description);
             mTextViewAmount = itemView.findViewById(R.id.text_spending_amount);
             mTextViewMonthAndYear = itemView.findViewById(R.id.text_spending_time);
+            mCardView.setOnLongClickListener(this);
         }
 
         void bindData(Spending spending) {
@@ -85,5 +90,15 @@ public class SpendingAdapter extends RecyclerView.Adapter<SpendingAdapter.ViewHo
             mTextViewAmount.setText(decimalFormat.format(Integer.parseInt(spending.getAmount()))
                     + SpendingKey.MONEY_FORMAT);
         }
+
+        @Override
+        public boolean onLongClick(View view) {
+            mListener.onLongClick(mSpending.getId());
+            return false;
+        }
+    }
+
+    public interface OnItemLongClickListener {
+        void onLongClick(String id);
     }
 }

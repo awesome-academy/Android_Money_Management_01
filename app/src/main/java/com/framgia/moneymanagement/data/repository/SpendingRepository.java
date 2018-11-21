@@ -29,4 +29,11 @@ public class SpendingRepository implements SpendingDataSource.Remote {
     public void getSpendings(ValueEventListener valueEventListener) {
         mRemote.getSpendings(valueEventListener);
     }
+
+    @Override
+    public void deleteSpending(String id,
+                               OnCompleteListener onCompleteListener,
+                               OnFailureListener onFailureListener) {
+        mRemote.deleteSpending(id, onCompleteListener, onFailureListener);
+    }
 }

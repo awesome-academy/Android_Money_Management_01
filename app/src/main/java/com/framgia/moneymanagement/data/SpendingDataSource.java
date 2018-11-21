@@ -13,5 +13,8 @@ public interface SpendingDataSource {
         void getSpendingKey(ValueEventListener valueEventListener);
 
         void getSpendings(ValueEventListener valueEventListener);
+
+        void deleteSpending(String id, OnCompleteListener onCompleteListener,
+                            OnFailureListener onFailureListener);
     }
 }
