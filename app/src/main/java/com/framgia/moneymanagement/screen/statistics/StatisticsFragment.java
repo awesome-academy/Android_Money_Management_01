@@ -23,7 +23,7 @@ public class StatisticsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         TabLayout tabLayout = view.findViewById(R.id.tablayout_statistics);
         ViewPager viewPager = view.findViewById(R.id.viewpager_statistics);
-        StatisticsAdapter adapter = new StatisticsAdapter(getFragmentManager(), getContext());
+        StatisticsAdapter adapter = new StatisticsAdapter(getFragmentManager(), getActivity());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }

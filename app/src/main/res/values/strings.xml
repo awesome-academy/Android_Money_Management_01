@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">moneymanagement</string>
-    <string name="server_client_id">156175578260-82kcjf3jssomvic0dmisliquik0v4hra.apps.googleusercontent.com</string>
+    <string name="server_client_id">987081383035-95l6pht5vahpc8rpri3j6ns4eef3i977.apps.googleusercontent.com</string>
     <string name="facebook_app_id">997435027102984</string>
     <string name="fb_login_protocol_scheme">fb997435027102984</string>
     <string name="action_register">Lần đầu sử dụng PiBank</string>
@@ -46,4 +46,20 @@
     <string name="title_no">No</string>
     <string name="statistics_this_month">Tháng này</string>
     <string name="statistics_last_month">Tháng trước</string>
+    <string name="title_overview">Tổng quan</string>
+    <string name="statistic_sum_income">Tổng thu:</string>
+    <string name="statistic_sum_spending">Tổng chi:</string>
+    <string name="statistic_sum_salary_gain">Tháng này bạn đã thu được:</string>
+    <string name="statistic_sum_salary_reduce">Tháng này bạn đã lỗ mất:</string>
+    <integer-array name="array_color">
+        <item>@color/color_blue</item>
+        <item>@color/color_red</item>
+        <item>@color/color_light_blue</item>
+        <item>@color/color_yellow</item>
+        <item>@color/color_pink</item>
+        <item>@color/color_orange</item>
+        <item>@color/color_purple</item>
+        <item>@color/color_green</item>
+        <item>@color/color_light_green</item>
+    </integer-array>
 </resources>
